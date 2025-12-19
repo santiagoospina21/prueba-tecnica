@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 const apiBase = '/api/folder';
+const API_KEY = import.meta.env.VITE_API_KEY || '';
+
+axios.defaults.headers.common['X-API-KEY'] = API_KEY;
 
 export async function getFolders() {
     return axios.get(apiBase, { headers: { Accept: 'application/json' } });
