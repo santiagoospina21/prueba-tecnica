@@ -20,7 +20,7 @@ class StoreFolderRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'container' => 'nullable|integer|exists:folders,id',
-            'owner' => 'nullable|exists:users,id',
+            'owner' => 'required|exists:users,id',
         ];
     }
 

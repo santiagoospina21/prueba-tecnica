@@ -36,7 +36,7 @@ class FolderController extends Controller
             $createdFolder = $this->folderService->createFolder($folder);
             return response()->json(["message" => "Folder created successfully", "data" => $createdFolder], 201);
         } catch (Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
+            return response()->json(["message" => "Error creating folder", "error" => $e->getMessage()], 500);
         }
     }
 
